@@ -1,0 +1,24 @@
+Array
+(
+    [survey_id] => 1
+    [student_id] => 202511
+    [answer] => Array
+        (
+            [1] => 1
+            [2] => 5
+            [3] => 9
+            [4] => 13
+            [5] => 17
+            [6] => 21
+            [7] => 26
+            [8] => 31
+            [9] => 36
+            [10] => 41
+            [11] => Nothing
+            [12] => Nothing
+            [13] => Teach
+            [14] => Web systems
+            [15] => More academic activities
+        )
+
+)

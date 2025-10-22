@@ -1,0 +1,898 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #dde4ff, #b2c4ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    background: linear-gradient(to right, #dde4ff, #b2c4ff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    font-family: 'Tektur', sans-serif;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+header h1{
+    text-transform: capitalize;
+    color: black;
+}
+
+.head-cont-title{
+    display: flex;
+    align-items: center;
+    flex-direction: row; 
+    margin-left: 10px;
+}
+
+.main-logo{
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.logbtn {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.cont-student, .cont-teacher {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.4s ease, color 0.3s ease;
+}
+
+.cont-student:hover, .cont-teacher:hover {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Brighter blue on hover */
+    color: #f0f0f0; /* Slightly lighter text color for contrast */
+}
+
+.overview-section {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.overview-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.overview-title .highlight {
+    color: #0072ff;
+}
+
+.overview-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.overview-features {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.container {
+    background-color: #e3e5ff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.container form {
+    background-color: #e3e5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.container span {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.container input {
+    background-color: #dedbff;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button {
+    background-color: #2d4ea8;
+    color: white;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+/* Sign-in and Sign-up form layout */
+.sign-in,
+.sign-up {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    z-index: 2;
+}
+
+.sign-up {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/* Toggle Panel */
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 150px 0 0 100px;
+    z-index: 10;
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    background: linear-gradient(to right, #5c6bc0, #2d4ea8);
+    color: white;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-left,
+.toggle-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+}
+
+/* modal */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #dde4ff, #b2c4ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}  
+
+header {
+    background-color: #182758;  
+    font-family: 'Tektur', sans-serif;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    height: 70px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.head-cont-title{
+    display: flex;
+    align-items: center;
+    flex-direction: row; 
+    margin-left: 10px;
+}
+
+.main-logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.logbtn {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.cont-student, .cont-teacher {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.4s ease, color 0.3s ease;
+}
+
+.cont-student:hover, .cont-teacher:hover {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Brighter blue on hover */
+    color: #f0f0f0; /* Slightly lighter text color for contrast */
+}
+
+.overview-section {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.overview-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.overview-title .highlight {
+    color: #0072ff;
+}
+
+.overview-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.overview-features {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.container {
+    background-color: #e3e5ff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.container form {
+    background-color: #e3e5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container h1 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.container span {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.container input {
+    background-color: #dedbff;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button {
+    background-color: #2d4ea8;
+    color: white;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden {
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+/* Sign-in and Sign-up form layout */
+.sign-in,
+.sign-up {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    z-index: 2;
+}
+
+.sign-up {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/* Toggle Panel */
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 150px 0 0 100px;
+    z-index: 10;
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    background: linear-gradient(to right, #5c6bc0, #2d4ea8);
+    color: white;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-left,
+.toggle-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+}
+
+/* validation */
+.validation, .validationForgot, .validationChange, .timeoutValidation, .timeoutValidationForgot, .timeoutValidationChange {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 8px 12px;
+    height: auto;
+    width: 100%;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: opacity 0.3s ease;
+}
+
+/* Forgot password */
+#forgotLink:hover {
+    color:#0072ff;
+}
+
+#forgotModal, #changePassModal, #passwordChanged {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+    z-index: 11;
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.modal-content {
+    background-color: #e3e5ff;
+    color: #2d4ea8;
+    padding: 30px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.modal-content input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #dedbff;
+    font-size: 14px;
+    outline: none;
+}
+
+.modal-content input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #dedbff;
+    font-size: 14px;
+    outline: none;
+}
+
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #dedbff;
+    font-size: 14px;
+    outline: none;
+}
+
+.modal-content button {
+    background-color: #2d4ea8;
+    color: #e3e5ff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+.modal-content button:hover {
+    background-color: #1e3686;
+}
+
+span.close {
+    position: absolute;
+    top: 15px; 
+    right: 20px;
+    font-size: 22px;
+    color: #2d4ea8;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #1e3686;
+}
+
+/* Para sa sign up modal */
+#signupModal {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+    z-index: 11;
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#signUpModalContent {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#signupModal {
+    display: none; /* default hidden */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#signUpModalContent {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 14px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: left;
+}
+
+#signUpModalContent h2 {
+    color: #2d4ea8;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#signUpModalContent .note {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#signUpModalContent label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2d4ea8;
+}
+
+#signUpModalContent select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#signUpModalContent button[type="submit"] {
+    width: 100%;
+    background-color: #2d4ea8;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#signUpModalContent button[type="submit"]:hover {
+    background-color: #1e3686;
+}
+
+#signUpModalContent .close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#signUpModalContent .close:hover {
+    color: #333;
+}
+
+#signupModal {
+    display: none; /* default hidden */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#signUpModalContent {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 14px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: left;
+}
+
+#signUpModalContent h2 {
+    color: #2d4ea8;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#signUpModalContent .note {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#signUpModalContent label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2d4ea8;
+}
+
+#signUpModalContent select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#signUpModalContent button[type="submit"] {
+    width: 100%;
+    background-color: #2d4ea8;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#signUpModalContent button[type="submit"]:hover {
+    background-color: #1e3686;
+}
+
+#signUpModalContent .close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#signUpModalContent .close:hover {
+    color: #333;
+}
+

@@ -1,0 +1,451 @@
+[26-May-2025 14:23:20 Europe/Berlin] ---- Update Survey Request ----
+[26-May-2025 14:23:20 Europe/Berlin] Received POST data: Array
+(
+    [facultyId] => 242501
+    [surveyId] => 1
+    [title] => End-of-Semester Feedback
+    [description] => Gathering feedback on course delivery and materials.
+    [section_code] => Array
+        (
+            [0] => BSIT 2B-G1
+            [1] => BSIT 2B-G2
+        )
+
+    [due_date] => 2025-05-31
+    [questions] => Array
+        (
+            [0] => Array
+                (
+                    [type] => MC
+                    [question_id] => 1
+                    [text] => How would you rate the course content?
+                    [choices] => Array
+                        (
+                            [0] => Excellent
+                            [1] => Good
+                            [2] => Fair
+                            [3] => Poor
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [type] => MC
+                    [question_id] => 2
+                    [text] => Was the instructor approachable?
+                    [choices] => Array
+                        (
+                            [0] => Always
+                            [1] => Often
+                            [2] => Sometimes
+                            [3] => Never
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [type] => MC
+                    [question_id] => 3
+                    [text] => How clear were the explanations during lectures?
+                    [choices] => Array
+                        (
+                            [0] => Very Clear
+                            [1] => Clear
+                            [2] => Unclear
+                            [3] => Very Unclear
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [type] => MC
+                    [question_id] => 4
+                    [text] => Did the course meet your expectations?
+                    [choices] => Array
+                        (
+                            [0] => Yes
+                            [1] => No
+                            [2] => Partially
+                            [3] => Not Sure
+                        )
+
+                )
+
+            [4] => Array
+                (
+                    [type] => MC
+                    [question_id] => 5
+                    [text] => How was the pacing of the course?
+                    [choices] => Array
+                        (
+                            [0] => Too Fast
+                            [1] => Just Right
+                            [2] => Too Slow
+                            [3] => Varied
+                        )
+
+                )
+
+            [5] => Array
+                (
+                    [type] => LS
+                    [question_id] => 6
+                    [text] => Rate the relevance of the course to your program.
+                    [choices] => Array
+                        (
+                            [0] => Strongly Agree
+                            [1] => Agree
+                            [2] => Neutral
+                            [3] => Disagree
+                            [4] => Strongly Disagree
+                        )
+
+                )
+
+            [6] => Array
+                (
+                    [type] => LS
+                    [question_id] => 7
+                    [text] => Rate the instructor’s preparedness.
+                    [choices] => Array
+                        (
+                            [0] => Strongly Agree
+                            [1] => Agree
+                            [2] => Neutral
+                            [3] => Disagree
+                            [4] => Strongly Disagree
+                        )
+
+                )
+
+            [7] => Array
+                (
+                    [type] => LS
+                    [question_id] => 8
+                    [text] => Rate the fairness of the assessments.
+                    [choices] => Array
+                        (
+                            [0] => Strongly Agree
+                            [1] => Agree
+                            [2] => Neutral
+                            [3] => Disagree
+                            [4] => Strongly Disagree
+                        )
+
+                )
+
+            [8] => Array
+                (
+                    [type] => LS
+                    [question_id] => 9
+                    [text] => Rate the usefulness of learning materials.
+                    [choices] => Array
+                        (
+                            [0] => Strongly Agree
+                            [1] => Agree
+                            [2] => Neutral
+                            [3] => Disagree
+                            [4] => Strongly Disagree
+                        )
+
+                )
+
+            [9] => Array
+                (
+                    [type] => LS
+                    [question_id] => 10
+                    [text] => Rate the overall learning experience.
+                    [choices] => Array
+                        (
+                            [0] => Strongly Agree
+                            [1] => Agree
+                            [2] => Neutral
+                            [3] => Disagree
+                            [4] => Strongly Disagree
+                        )
+
+                )
+
+            [10] => Array
+                (
+                    [type] => SA
+                    [question_id] => 11
+                    [text] => What did you like most about the course?
+                )
+
+            [11] => Array
+                (
+                    [type] => SA
+                    [question_id] => 12
+                    [text] => What could be improved in the course?
+                )
+
+            [12] => Array
+                (
+                    [type] => SA
+                    [question_id] => 13
+                    [text] => Any suggestions for the instructor?
+                )
+
+            [13] => Array
+                (
+                    [type] => SA
+                    [question_id] => 14
+                    [text] => What topics did you find most interesting?
+                )
+
+            [14] => Array
+                (
+                    [type] => SA
+                    [question_id] => 15
+                    [text] => How can the course delivery be improved?
+                )
+
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Faculty ID: 242501, Survey ID: 1, Title: End-of-Semester Feedback, Description: Gathering feedback on course delivery and materials., Due Date: 2025-05-31
+[26-May-2025 14:23:20 Europe/Berlin] Sections assigned: Array
+(
+    [0] => BSIT 2B-G1
+    [1] => BSIT 2B-G2
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Questions received: 15
+[26-May-2025 14:23:20 Europe/Berlin] Current question IDs in DB: Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+    [6] => 7
+    [7] => 8
+    [8] => 9
+    [9] => 10
+    [10] => 11
+    [11] => 12
+    [12] => 13
+    [13] => 14
+    [14] => 15
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Question IDs from POST: Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+    [5] => 6
+    [6] => 7
+    [7] => 8
+    [8] => 9
+    [9] => 10
+    [10] => 11
+    [11] => 12
+    [12] => 13
+    [13] => 14
+    [14] => 15
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Questions to delete: Array
+(
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => MC
+    [question_id] => 1
+    [text] => How would you rate the course content?
+    [choices] => Array
+        (
+            [0] => Excellent
+            [1] => Good
+            [2] => Fair
+            [3] => Poor
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => MC
+    [question_id] => 2
+    [text] => Was the instructor approachable?
+    [choices] => Array
+        (
+            [0] => Always
+            [1] => Often
+            [2] => Sometimes
+            [3] => Never
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => MC
+    [question_id] => 3
+    [text] => How clear were the explanations during lectures?
+    [choices] => Array
+        (
+            [0] => Very Clear
+            [1] => Clear
+            [2] => Unclear
+            [3] => Very Unclear
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => MC
+    [question_id] => 4
+    [text] => Did the course meet your expectations?
+    [choices] => Array
+        (
+            [0] => Yes
+            [1] => No
+            [2] => Partially
+            [3] => Not Sure
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => MC
+    [question_id] => 5
+    [text] => How was the pacing of the course?
+    [choices] => Array
+        (
+            [0] => Too Fast
+            [1] => Just Right
+            [2] => Too Slow
+            [3] => Varied
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => LS
+    [question_id] => 6
+    [text] => Rate the relevance of the course to your program.
+    [choices] => Array
+        (
+            [0] => Strongly Agree
+            [1] => Agree
+            [2] => Neutral
+            [3] => Disagree
+            [4] => Strongly Disagree
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => LS
+    [question_id] => 7
+    [text] => Rate the instructor’s preparedness.
+    [choices] => Array
+        (
+            [0] => Strongly Agree
+            [1] => Agree
+            [2] => Neutral
+            [3] => Disagree
+            [4] => Strongly Disagree
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => LS
+    [question_id] => 8
+    [text] => Rate the fairness of the assessments.
+    [choices] => Array
+        (
+            [0] => Strongly Agree
+            [1] => Agree
+            [2] => Neutral
+            [3] => Disagree
+            [4] => Strongly Disagree
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => LS
+    [question_id] => 9
+    [text] => Rate the usefulness of learning materials.
+    [choices] => Array
+        (
+            [0] => Strongly Agree
+            [1] => Agree
+            [2] => Neutral
+            [3] => Disagree
+            [4] => Strongly Disagree
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => LS
+    [question_id] => 10
+    [text] => Rate the overall learning experience.
+    [choices] => Array
+        (
+            [0] => Strongly Agree
+            [1] => Agree
+            [2] => Neutral
+            [3] => Disagree
+            [4] => Strongly Disagree
+        )
+
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => SA
+    [question_id] => 11
+    [text] => What did you like most about the course?
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => SA
+    [question_id] => 12
+    [text] => What could be improved in the course?
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => SA
+    [question_id] => 13
+    [text] => Any suggestions for the instructor?
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => SA
+    [question_id] => 14
+    [text] => What topics did you find most interesting?
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] Processing question: Array
+(
+    [type] => SA
+    [question_id] => 15
+    [text] => How can the course delivery be improved?
+)
+
+[26-May-2025 14:23:20 Europe/Berlin] ---- Update Survey Completed Successfully ----
